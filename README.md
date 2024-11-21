@@ -33,6 +33,9 @@ Backend API repo: https://github.com/FireCubeStudios/DarkSky.API/
 - Draft. Prototype / Pre-Pre-Pre-Alpha version. Still exploring modern-ui & mvvm "magic"...
 - some experiments with session storing
 
+## References
+- https://github.com/FireCubeStudios/DarkSky/ Original DarkSky project
+- https://github.com/FireCubeStudios/ FireCubeStudios, DarkSky's creators/dev team 
 
 ## Licensing
 MIT License
