@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DarkSky"
+    xmlns:vm="using:DarkSky.Core.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -127,13 +128,14 @@
             <muxc:NavigationView.FooterMenuItems>
                 <muxc:NavigationViewItem Tag="Profile">
                     <StackPanel>
-                        <!--PersonPicture 
-                            Height="36" 
-                           ProfilePicture="{Binding img(viewmodels:MainViewModel.CurrentProfile.Avatar), Mode=OneWay}"                           
+                       <!--PersonPicture 
+                          Height="36" 
+                           ProfilePicture="{Binding img(MainViewModel.CurrentProfile.Avatar), Mode=OneWay}"                           
                             /-->
-                        <TextBlock Text="{Binding CurrentProfile.Avatar, Mode=OneWay}"/>
+                        <!--TextBlock Text="{Binding CurrentProfile.Avatar, Mode=OneWay}"/-->
 
-                        <TextBlock Text="{Binding CurrentProfile.DisplayName, Mode=OneWay}"/>
+                        <!--TextBlock Text="{Binding CurrentProfile.DisplayName, Mode=OneWay}"/-->
+                        <TextBlock Text="[DN]"/>
                      </StackPanel>
                 </muxc:NavigationViewItem>
                     

@@ -25,11 +25,14 @@ namespace DarkSky.Pages
 	/// </summary>
 	public sealed partial class ProfilePage : Page
 	{
-		private ProfileViewModel ViewModel = App.Current.Services.GetService<ProfileViewModel>();
+		//private ProfileViewModel ViewModel = App.Current.Services.GetService<ProfileViewModel>();
 		public ProfilePage()
 		{
 			this.InitializeComponent();
-		}
+
+			// ? app cycling
+            this.DataContext = App.Current.Services.GetService<ProfileViewModel>();
+        }
 
 		public ImageSource img(string uri)
 		{

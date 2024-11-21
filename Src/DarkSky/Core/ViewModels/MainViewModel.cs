@@ -65,39 +65,7 @@ namespace DarkSky.Core.ViewModels
                         + ex.Message);
                 }
 
-                /*
-                var SessionHandle = (ATHandle)StorageManager.ReadSimpleSetting("SessionHandle");
-
-                var SessionAccessJwt = (string)StorageManager.ReadSimpleSetting("SessionAccessJwt");
-                var SessionRefreshJwt = (string)StorageManager.ReadSimpleSetting("SessionRefreshJwt");
-
-                var SessionDidDoc = (DidDoc)StorageManager.ReadSimpleSetting("SessionDidDoc");
-                var SessionDid = (ATDid)StorageManager.ReadSimpleSetting("SessionDid");
-                var SessionEmail = (string)StorageManager.ReadSimpleSetting("SessionEmail");
-                */
-                /*
-                try
-                {
-                    this.atProtoService.Session = new Session(
-                       did: SessionDid, didDoc: default, handle: default,
-                        email: default, accessJwt: default, refreshJwt: default)
-                    //this.atProtoService.Session = new Session()
-                    {
-                        Handle = SessionHandle,
-                        AccessJwt = SessionAccessJwt,
-                        RefreshJwt = SessionRefreshJwt,
-                        Did = SessionDid,
-                        DidDoc = SessionDidDoc,
-                        Email = SessionEmail,
-                    };
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine("[ex] atProtoService.Session = new Session exception: "
-                        + ex.Message);
-                }
-                */
-
+              
 
                 if (this.atProtoService.Session is null)
                 {

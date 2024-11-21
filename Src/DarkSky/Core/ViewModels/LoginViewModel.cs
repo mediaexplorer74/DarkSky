@@ -1,7 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DarkSky.Core.Services;
+using FishyFlip.Models;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using System;
 //using Google.Protobuf.WellKnownTypes;
 
 
@@ -28,6 +31,46 @@ namespace DarkSky.Core.ViewModels
 		{
             this.atProtoService = atProtoService;
             this.navigationService = navigationService;
+
+            StorageManager.Init();
+
+            string json1 = "";
+            string json2 = "";
+
+            try
+            {
+                json1 = StorageManager.ReadSimpleSetting("ProtoServiceState")
+                    .ToString();
+                json2 = StorageManager.ReadSimpleSetting("Session")
+                    .ToString();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[ex]StorageManager.ReadSimpleSetting(Session).ToString" +
+                    " exception: " + ex.Message);
+            }
+
+            // Plan A - check stored session
+            try
+            {
+                this.atProtoService.ATProtocolClient.AuthSession
+                    = JsonConvert.DeserializeObject<AuthSession>(json1);
+                this.atProtoService.Session = JsonConvert.DeserializeObject<Session>(json2);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[ex] JsonConvert.DeserializeObject<Session>(json) exception: "
+                    + ex.Message);
+            }
+
+            if (this.atProtoService.Session is not null)
+            {
+                ErrorMessage = string.Empty;
+                navigationService.NavigateTo<MainViewModel>();
+            }
+
+            // Plan B - do login
+
             LoginCommand = new RelayCommand(OnLogin);
         }
 
@@ -36,7 +79,13 @@ namespace DarkSky.Core.ViewModels
 
         private async void OnLogin()
         {
+           
+            StorageManager.Init();
 
+            string json1 = "";
+            string json2 = "";
+
+           
             // simplest username/pass validation
             if (string.IsNullOrWhiteSpace(UsernameBox) || string.IsNullOrWhiteSpace(PasswordBox))
             {
@@ -44,31 +93,33 @@ namespace DarkSky.Core.ViewModels
                 return;
             }
 
-           
-            await this.atProtoService.LoginAsync(usernameBox, passwordBox);
 
+            await this.atProtoService.LoginAsync(usernameBox, passwordBox);
+         
+            // auth ok?
             if (this.atProtoService.Session is not null)
             {
                 //success
 
                 ErrorMessage = string.Empty;
 
-                //TODO - try to save session
-                StorageManager.Init();
-
-                string json1 = JsonConvert.SerializeObject(
+                // save session
+                
+                json1 = JsonConvert.SerializeObject(
                     this.atProtoService.ATProtocolClient.AuthSession);
-                string json2 = JsonConvert.SerializeObject(this.atProtoService.Session);
+                json2 = JsonConvert.SerializeObject(this.atProtoService.Session);
                 StorageManager.WriteSimpleSetting("ProtoServiceState", json1);
                 StorageManager.WriteSimpleSetting("Session", json2);
-                //StorageManager.WriteSimpleSetting("SessionHandle", this.atProtoService.Session.Handle);
+                /*
+                StorageManager.WriteSimpleSetting("SessionHandle", this.atProtoService.Session.Handle);
 
-                //StorageManager.WriteSimpleSetting("SessionAccessJwt", this.atProtoService.Session.AccessJwt);
-                //StorageManager.WriteSimpleSetting("SessionRefreshJwt", this.atProtoService.Session.RefreshJwt);
+                StorageManager.WriteSimpleSetting("SessionAccessJwt", this.atProtoService.Session.AccessJwt);
+                StorageManager.WriteSimpleSetting("SessionRefreshJwt", this.atProtoService.Session.RefreshJwt);
 
-                //StorageManager.WriteSimpleSetting("SessionDidDoc", this.atProtoService.Session.DidDoc);
-                //StorageManager.WriteSimpleSetting("SessionDid", this.atProtoService.Session.Did);
-                //StorageManager.WriteSimpleSetting("SessionEmail", this.atProtoService.Session.Email);
+                StorageManager.WriteSimpleSetting("SessionDidDoc", this.atProtoService.Session.DidDoc);
+                StorageManager.WriteSimpleSetting("SessionDid", this.atProtoService.Session.Did);
+                StorageManager.WriteSimpleSetting("SessionEmail", this.atProtoService.Session.Email);
+                */
 
                 navigationService.NavigateTo<MainViewModel>();
 
@@ -76,8 +127,7 @@ namespace DarkSky.Core.ViewModels
             else
             {
                 // no success
-
-                ErrorMessage = "Wrong username or password.";
+                ErrorMessage = "Wrong username or password (or BlueSky service not available...)";
             }
 		}//OnLogin
 	}

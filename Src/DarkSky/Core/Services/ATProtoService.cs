@@ -24,9 +24,14 @@ namespace DarkSky.Core.Services
 			this.credentialService = credentialService;
 
 			if (credentialService.Count() == 0)
-				navigationService.NavigateTo<LoginViewModel>();
+			{
+                //navigationService.NavigateTo<LoginViewModel>();
+                navigationService.NavigateTo<MainViewModel>();
+            }
 			else
+			{
 				setup();
+			}
 		}
 
 		private async void setup()
