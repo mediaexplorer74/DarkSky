@@ -19,6 +19,7 @@ Backend API repo: https://github.com/FireCubeStudios/DarkSky.API/
 ![Desktop x64](Images/shot01.png)
 ![Desktop x64](Images/shot02.png)
 ![Desktop x64](Images/shot03.png)
+![Mobile ARM](Images/shot04.png)
 
 
 ## Tech/dev details

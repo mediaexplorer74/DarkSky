@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
-  <Identity Name="ME.BlueSkyV1" Publisher="CN=Gargaj" Version="1.0.0.0" />
+  <Identity Name="ME.BlueSkyV1" Publisher="CN=Admin" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="48d2722d-be1e-4b41-b022-3c7046539e00" PhonePublisherId="00003501-0081-0100-1006-000200000000"/>
   <Properties>
     <DisplayName>BlueSky v1.0</DisplayName>
