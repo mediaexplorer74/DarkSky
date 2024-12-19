@@ -628,11 +628,10 @@
                         Grid.ColumnSpan="2"
                         Margin="12">
                             <Grid 
-                CornerRadius="8" 
-                HorizontalAlignment="Left"
-                Background="{TemplateBinding PaneBackground}"
-                Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.OpenPaneLength}"
-                Canvas.ZIndex="1">
+                         HorizontalAlignment="Left"
+                            Background="{TemplateBinding PaneBackground}"
+                            Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.OpenPaneLength}"
+                            Canvas.ZIndex="1">
                                 <Grid.BackgroundTransition>
                                     <BrushTransition />
                                 </Grid.BackgroundTransition>

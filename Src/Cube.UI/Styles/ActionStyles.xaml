@@ -38,11 +38,13 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <ToolkitControls:DropShadowPanel RenderTransformOrigin="0.5, 0.5" x:Name="Shadow" CornerRadius="8" Margin="12, 8, 12, 8" BlurRadius="16" IsMasked="False">
+                        <ToolkitControls:DropShadowPanel RenderTransformOrigin="0.5, 0.5" x:Name="Shadow" 
+                                                         Margin="12, 8, 12, 8" IsMasked="False">
                             <ToolkitControls:DropShadowPanel.RenderTransform>
                                 <ScaleTransform x:Name="Scale" ScaleX="1" ScaleY="1"/>
                             </ToolkitControls:DropShadowPanel.RenderTransform>
-                            <Grid Background="{ThemeResource LayerFillColorDefaultBrush}" CornerRadius="8" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
+                            <Grid Background="{ThemeResource LayerFillColorDefaultBrush}" 
+                                  BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                 <ContentPresenter x:Name="contentControl" Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}"  ContentTemplate="{TemplateBinding ContentTemplate}"/>
                             </Grid>
                         </ToolkitControls:DropShadowPanel>
@@ -54,13 +56,12 @@
     <Style x:Key="ListActionContainer" TargetType="ListViewItem">
         <Setter Property="Margin" Value="4, 0, 4, 0" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="CornerRadius" Value="4" />
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListViewItem">
-                    <Grid Width="44" Height="32" Padding="{TemplateBinding Padding}" CornerRadius="{TemplateBinding CornerRadius}">
+                    <Grid Width="44" Height="32" Padding="{TemplateBinding Padding}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal">
@@ -99,7 +100,7 @@
                         </ContentPresenter>
                         <ToolkitControls:DropShadowPanel Margin="2,0,0,2" x:Name="Glow" Color="{ThemeResource SystemAccentColorLight2}" ShadowOpacity="0.93" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                             <Grid x:Name="Pipe"
-                                                Height="2" Width="0.1" CornerRadius="2">
+                                                Height="2" Width="0.1">
                                 <Grid.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                         <GradientStop Color="{ThemeResource SystemAccentColorLight3}" Offset="0.0" />

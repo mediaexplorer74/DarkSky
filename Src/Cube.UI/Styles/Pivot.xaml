@@ -499,23 +499,29 @@
                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                 OpticalMarginAlignment="TrimSideBearings" />
-                        <ToolkitControls:DropShadowPanel CornerRadius="2" x:Name="Glow" Color="{ThemeResource SystemAccentColorLight2}" ShadowOpacity="0.93"   VerticalAlignment="Bottom"
-                HorizontalAlignment="Center">
-                            <Grid x:Name="SelectedPipe"
-                Height="3" Width="36" 
-                VerticalAlignment="Bottom" CornerRadius="2"
-                HorizontalAlignment="Center"
-                Margin="0,0,0,2">
-                                <Grid.Background>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="{ThemeResource SystemAccentColorLight3}" Offset="0.0" />
-                                        <GradientStop Color="{ThemeResource SystemAccentColorLight2}" Offset="0.5" />
-                                        <GradientStop Color="{ThemeResource SystemAccentColorLight3}" Offset="1.0" />
+                 <ToolkitControls:DropShadowPanel 
+                    x:Name="Glow" 
+                    Color="{ThemeResource SystemAccentColorLight2}" 
+                    ShadowOpacity="0.93"   VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center">
+                  <Grid x:Name="SelectedPipe"
+                    Height="3" Width="36" 
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,2">
+                       <Grid.Background>
+                          <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="{ThemeResource SystemAccentColorLight3}" 
+                                                Offset="0.0" />
+                            <GradientStop Color="{ThemeResource SystemAccentColorLight2}" 
+                                                Offset="0.5" />
+                            <GradientStop Color="{ThemeResource SystemAccentColorLight3}" 
+                                                Offset="1.0" />
                                     </LinearGradientBrush>
-                                </Grid.Background>
-                            </Grid>
-                        </ToolkitControls:DropShadowPanel>
-                    </Grid>
+                            </Grid.Background>
+                        </Grid>
+                    </ToolkitControls:DropShadowPanel>
+                  </Grid>
 
                 </ControlTemplate>
             </Setter.Value>

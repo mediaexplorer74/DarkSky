@@ -18,25 +18,45 @@
                     <Grid
               Background="{TemplateBinding Background}"
               BorderBrush="{TemplateBinding BorderBrush}"
-              BorderThickness="{TemplateBinding BorderThickness}"
-              CornerRadius="{TemplateBinding CornerRadius}">
+              BorderThickness="{TemplateBinding BorderThickness}">
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" >
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="Glow" Storyboard.TargetProperty="ShadowOpacity" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.43">
+                                        <DoubleAnimation Storyboard.TargetName="Glow" 
+                                                         Storyboard.TargetProperty="ShadowOpacity" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="0.43">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOn" Storyboard.TargetProperty="ScaleX" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.6">
+                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOn"
+                                                         Storyboard.TargetProperty="ScaleX" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="0.6">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOn" Storyboard.TargetProperty="ScaleY" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.6">
+                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOn" 
+                                                         Storyboard.TargetProperty="ScaleY"
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="0.6">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOff" Storyboard.TargetProperty="ScaleX" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.7">
+                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOff" 
+                                                         Storyboard.TargetProperty="ScaleX" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="0.7">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOff" Storyboard.TargetProperty="ScaleY" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.7">
+                                        <DoubleAnimation Storyboard.TargetName="ScaleKnobOff" 
+                                                         Storyboard.TargetProperty="ScaleY" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="0.7">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="Gs1" Storyboard.TargetProperty="Offset" EnableDependentAnimation="True" Duration="0:0:0.42" To="0.5"/>
-                                        <DoubleAnimation Storyboard.TargetName="Gs2" Storyboard.TargetProperty="Offset" EnableDependentAnimation="True" Duration="0:0:0.42" To="1.0"/>
+                                        <DoubleAnimation Storyboard.TargetName="Gs1" 
+                                                         Storyboard.TargetProperty="Offset" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.42" To="0.5"/>
+                                        <DoubleAnimation Storyboard.TargetName="Gs2" 
+                                                         Storyboard.TargetProperty="Offset" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.42" To="1.0"/>
                                     </Storyboard>
                                 </VisualState>
 
@@ -460,24 +480,44 @@
                     <Grid
               Background="{TemplateBinding Background}"
               BorderBrush="{TemplateBinding BorderBrush}"
-              BorderThickness="{TemplateBinding BorderThickness}"
-              CornerRadius="{TemplateBinding CornerRadius}">
+              BorderThickness="{TemplateBinding BorderThickness}">
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" >
                                     <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="Glow" Storyboard.TargetProperty="ShadowOpacity" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.43">
+                                        <DoubleAnimation Storyboard.TargetName="Glow" 
+                                                         Storyboard.TargetProperty="ShadowOpacity"
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="0.43">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOn" Storyboard.TargetProperty="Width" EnableDependentAnimation="True" Duration="0:0:0.12" To="10">
+                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOn"
+                                                         Storyboard.TargetProperty="Width" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="10">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOn" Storyboard.TargetProperty="Height" EnableDependentAnimation="True" Duration="0:0:0.12" To="10">
+                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOn"
+                                                         Storyboard.TargetProperty="Height"
+                                                         EnableDependentAnimation="True"
+                                                         Duration="0:0:0.12" To="10">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOff" Storyboard.TargetProperty="Width" EnableDependentAnimation="True" Duration="0:0:0.12" To="10">
+                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOff" 
+                                                         Storyboard.TargetProperty="Width"
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="10">
                                         </DoubleAnimation>
-                                        <DoubleAnimation Storyboard.TargetName="Gs1" Storyboard.TargetProperty="Offset" EnableDependentAnimation="True" Duration="0:0:0.42" To="0.5"/>
-                                        <DoubleAnimation Storyboard.TargetName="Gs2" Storyboard.TargetProperty="Offset" EnableDependentAnimation="True" Duration="0:0:0.42" To="1.0"/>
-                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOff" Storyboard.TargetProperty="Height" EnableDependentAnimation="True" Duration="0:0:0.12" To="10">
+                                        <DoubleAnimation Storyboard.TargetName="Gs1" 
+                                                         Storyboard.TargetProperty="Offset" 
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.42" To="0.5"/>
+                                        <DoubleAnimation Storyboard.TargetName="Gs2" 
+                                                         Storyboard.TargetProperty="Offset"
+                                                         EnableDependentAnimation="True"
+                                                         Duration="0:0:0.42" To="1.0"/>
+                                        <DoubleAnimation Storyboard.TargetName="SwitchKnobOff"
+                                                         Storyboard.TargetProperty="Height"
+                                                         EnableDependentAnimation="True" 
+                                                         Duration="0:0:0.12" To="10">
                                         </DoubleAnimation>
                                     </Storyboard>
                                 </VisualState>

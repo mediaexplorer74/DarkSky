@@ -23,7 +23,6 @@
         <Setter Property="UseSystemFocusVisuals" Value="{ThemeResource IsApplicationFocusVisualKindReveal}" />
         <Setter Property="ContextFlyout" Value="{StaticResource TextControlCommandBarContextFlyout}" />
         <Setter Property="SelectionFlyout" Value="{StaticResource TextControlCommandBarSelectionFlyout}" />
-        <Setter Property="CornerRadius" Value="4" />
         <Setter Property="BackgroundSizing" Value="InnerBorderEdge" />
         <Setter Property="Template">
             <Setter.Value>
@@ -39,8 +38,8 @@
                                                 BorderBrush="{ThemeResource TextControlButtonBorderBrush}"
                                                 BorderThickness="{TemplateBinding BorderThickness}"
                                                 Background="{ThemeResource TextControlButtonBackground}"
-                                                BackgroundSizing="{TemplateBinding BackgroundSizing}"
-                                                CornerRadius="{TemplateBinding CornerRadius}">
+                                                BackgroundSizing="{TemplateBinding BackgroundSizing}">
+                                            
                                                 <VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="CommonStates">
                                                         <VisualState x:Name="Normal" />
@@ -229,14 +228,20 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
                             Control.IsTemplateFocusTarget="True"
                             MinWidth="{TemplateBinding MinWidth}"
                             MinHeight="{TemplateBinding MinHeight}" />
-                            <ToolkitControls:DropShadowPanel BlurRadius="16.0" ShadowOpacity="0.43" IsMasked="True" Grid.Row="1"
-                          OffsetX="0.0" OffsetY="0.0" VerticalAlignment="Bottom" Color="{ThemeResource SystemAccentColorLight2}">
-                                <Grid VerticalAlignment="Bottom" Margin="0, 0, 0, 0"  Width="{TemplateBinding Width}"
-                            Height="2" CornerRadius="0, 0, 4, 4">
+                            <ToolkitControls:DropShadowPanel 
+                                ShadowOpacity="0.43" 
+                                IsMasked="True" 
+                                Grid.Row="1"
+                                OffsetX="0.0" 
+                                OffsetY="0.0" 
+                                VerticalAlignment="Bottom" 
+                                Color="{ThemeResource SystemAccentColorLight2}">
+                                <Grid VerticalAlignment="Bottom" Margin="0, 0, 0, 0" 
+                                      Width="{TemplateBinding Width}"
+                            Height="2">
                                     <Grid.RenderTransform>
                                         <ScaleTransform x:Name="BottomBar" ScaleX="0"/>
                                     </Grid.RenderTransform>
@@ -284,7 +289,6 @@
                             Grid.Column="1"
                             Style="{StaticResource DeleteButtonStyle}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
                             Padding="{ThemeResource HelperButtonThemePadding}"
                             IsTabStop="False"
                             Visibility="Collapsed"

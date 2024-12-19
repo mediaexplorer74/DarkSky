@@ -30,19 +30,19 @@
             <Setter Property="BorderThickness" Value="{ThemeResource ExpanderHeaderBorderThickness}" />
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="MinHeight" Value="{StaticResource ExpanderMinHeight}" />
-            <Setter Property="Padding" Value="{StaticResource ExpanderContentPadding}" />
-            <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource ExpanderContentPadding}" />           
         </Style>
 
-        <Style x:Key="ButtonSettingsBlockStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Style x:Key="ButtonSettingsBlockStyle" TargetType="Button"
+               BasedOn="{StaticResource DefaultButtonStyle}">
             <Setter Property="Background" Value="{ThemeResource ExpanderHeaderBackground}" />
             <Setter Property="BorderBrush" Value="{ThemeResource ExpanderHeaderBorderBrush}" />
-            <Setter Property="BorderThickness" Value="{ThemeResource ExpanderHeaderBorderThickness}" />
+            <Setter Property="BorderThickness" 
+                    Value="{ThemeResource ExpanderHeaderBorderThickness}" />
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="Padding" Value="{StaticResource ExpanderContentPadding}" />
-            <Setter Property="MinHeight" Value="{StaticResource ExpanderMinHeight}" />
-            <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
+            <Setter Property="MinHeight" Value="{StaticResource ExpanderMinHeight}" />       
         </Style>
     </UserControl.Resources>
 

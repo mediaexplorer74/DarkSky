@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ToolkitControls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:media="using:Microsoft.UI.Xaml.Media">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ToolkitControls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:media="using:Microsoft.UI.Xaml.Media">
 
     <Style x:Key="GlowRadio" TargetType="RadioButton">
         <Setter Property="Background" Value="{ThemeResource RadioButtonBackground}" />
@@ -19,7 +21,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}">
+                    <Grid x:Name="RootGrid" 
+                          Background="{TemplateBinding Background}" 
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}">
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -214,7 +219,11 @@
                             </ToolkitControls:DropShadowPanel>
                             <!-- A seperate element is added since the two orthogonal state groups that cannot touch the same property -->
 
-                            <Border x:Name="PressedCheckGlyph" Width="4" Height="4" CornerRadius="4" UseLayoutRounding="False" Opacity="0" BackgroundSizing="OuterBorderEdge" Background="{ThemeResource RadioBrush}" BorderBrush="{ThemeResource RadioButtonCheckGlyphStroke}"/>
+                            <Border x:Name="PressedCheckGlyph" Width="4" Height="4" 
+                                    UseLayoutRounding="False" Opacity="0" 
+                                    BackgroundSizing="OuterBorderEdge" 
+                                    Background="{ThemeResource RadioBrush}" 
+                                    BorderBrush="{ThemeResource RadioButtonCheckGlyphStroke}"/>
 
                         </Grid>
                         <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}" ContentTransitions="{TemplateBinding ContentTransitions}" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Grid.Column="1" AutomationProperties.AccessibilityView="Raw" TextWrapping="Wrap" />

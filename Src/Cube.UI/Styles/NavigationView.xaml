@@ -44,7 +44,6 @@
     <Setter Property="PaneToggleButtonStyle" Value="{StaticResource PaneToggleButtonStyle}" />
     <Setter Property="IsTabStop" Value="False" />
     <Setter Property="CompactPaneLength" Value="{ThemeResource NavigationViewCompactPaneLength}" />
-    <Setter Property="CornerRadius" Value="{ThemeResource OverlayCornerRadius}" />
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="local:NavigationView">
@@ -61,7 +60,8 @@
                 <RowDefinition Height="Auto" />
               </Grid.RowDefinitions>
 
-              <Grid x:Name="TogglePaneTopPadding" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPadding}" />
+              <Grid x:Name="TogglePaneTopPadding" 
+                    Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPadding}" />
 
               <Grid
                 x:Name="ButtonHolderGrid"
@@ -209,13 +209,13 @@
                       <Flyout ElementSoundMode="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ElementSoundMode}" Placement="BottomEdgeAlignedRight">
                         <Flyout.FlyoutPresenterStyle>
                           <Style TargetType="FlyoutPresenter">
-                            <Setter Property="Padding" Value="{ThemeResource TopNavigationViewOverflowMenuPadding}" />
+                            <Setter Property="Padding" 
+                                    Value="{ThemeResource TopNavigationViewOverflowMenuPadding}" />
                             <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto" />
                             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
                             <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto" />
                             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
                             <Setter Property="ScrollViewer.ZoomMode" Value="Disabled" />
-                            <Setter Property="CornerRadius" Value="{ThemeResource OverlayCornerRadius}" />
                             <Setter Property="Template">
                               <Setter.Value>
                                 <ControlTemplate TargetType="FlyoutPresenter">
@@ -237,8 +237,7 @@
                                       BorderThickness="{TemplateBinding BorderThickness}"
                                       Content="{TemplateBinding Content}"
                                       ContentTemplate="{TemplateBinding ContentTemplate}"
-                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                      CornerRadius="{ThemeResource OverlayCornerRadius}" />
+                                      ContentTransitions="{TemplateBinding ContentTransitions}" />
                                   </ScrollViewer>
                                 </ControlTemplate>
                               </Setter.Value>
@@ -308,7 +307,6 @@
                 BorderBrush="{ThemeResource NavigationViewItemSeparatorForeground}"
                 BorderThickness="{ThemeResource NavigationViewBorderThickness}"
                 CompactPaneLength="{TemplateBinding CompactPaneLength}"
-                CornerRadius="{Binding Source={ThemeResource OverlayCornerRadius}, Converter={StaticResource RightCornerRadiusFilterConverter}}"
                 DisplayMode="Inline"
                 IsPaneOpen="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsPaneOpen, Mode=TwoWay}"
                 IsTabStop="False"
@@ -478,13 +476,12 @@
                 </SplitView.Pane>
 
                 <SplitView.Content>
-                  <Grid
+                                    <Grid
                     x:Name="ContentGrid"
                     Margin="0"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    BorderThickness="0"
-                    CornerRadius="0">
+                    BorderThickness="0">
                     <Grid.RowDefinitions>
                       <RowDefinition Height="Auto" />
                       <RowDefinition Height="Auto" />
@@ -548,7 +545,6 @@
                     <Setter Target="HeaderContent.Margin" Value="{ThemeResource NavigationViewMinimalHeaderMargin}" />
                     <Setter Target="NavigationViewBackButton.Style" Value="{ThemeResource NavigationBackButtonSmallStyle}" />
                     <Setter Target="ContentGrid.BorderThickness" Value="{ThemeResource NavigationViewMinimalContentGridBorderThickness}" />
-                    <Setter Target="ContentGrid.CornerRadius" Value="{ThemeResource NavigationViewMinimalContentGridCornerRadius}" />
                     <Setter Target="ContentGrid.Margin" Value="{ThemeResource NavigationViewMinimalContentMargin}" />
                   </VisualState.Setters>
                 </VisualState>
@@ -556,7 +552,6 @@
                 <VisualState x:Name="TopNavigationMinimal">
                   <VisualState.Setters>
                     <Setter Target="ContentGrid.BorderThickness" Value="{ThemeResource TopNavigationViewContentGridBorderThickness}" />
-                    <Setter Target="ContentGrid.CornerRadius" Value="{ThemeResource TopNavigationViewContentGridCornerRadius}" />
                     <Setter Target="ContentGrid.Margin" Value="{ThemeResource TopNavigationViewContentMargin}" />
                   </VisualState.Setters>
                 </VisualState>
@@ -566,7 +561,6 @@
                     <Setter Target="HeaderContent.Margin" Value="{ThemeResource NavigationViewMinimalHeaderMargin}" />
                     <Setter Target="NavigationViewBackButton.Style" Value="{ThemeResource NavigationBackButtonSmallStyle}" />
                     <Setter Target="ContentGrid.BorderThickness" Value="{ThemeResource NavigationViewMinimalContentGridBorderThickness}" />
-                    <Setter Target="ContentGrid.CornerRadius" Value="{ThemeResource NavigationViewMinimalContentGridCornerRadius}" />
                     <Setter Target="ContentGrid.Margin" Value="{ThemeResource NavigationViewMinimalContentMargin}" />
                   </VisualState.Setters>
                 </VisualState>
@@ -742,7 +736,6 @@
     <Setter Property="UseSystemFocusVisuals" Value="True" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="TabNavigation" Value="Once" />
-    <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="local:NavigationViewItem">
@@ -767,7 +760,6 @@
               ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
               ContentTransitions="{TemplateBinding ContentTransitions}"
               Control.IsTemplateFocusTarget="True"
-              CornerRadius="{TemplateBinding CornerRadius}"
               Foreground="{TemplateBinding Foreground}"
               Icon="{TemplateBinding Icon}"
               InfoBadge="{TemplateBinding InfoBadge}"
@@ -795,7 +787,6 @@
                     <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto" />
                     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
                     <Setter Property="ScrollViewer.ZoomMode" Value="Disabled" />
-                    <Setter Property="CornerRadius" Value="{ThemeResource OverlayCornerRadius}" />
                     <Setter Property="Template">
                       <Setter.Value>
                         <ControlTemplate TargetType="FlyoutPresenter">
@@ -807,7 +798,7 @@
                             VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
                             VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}"
                             ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
-                            <ContentPresenter
+                                                        <ContentPresenter
                               x:Name="ContentPresenter"
                               Padding="{TemplateBinding Padding}"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -817,9 +808,8 @@
                               BorderThickness="{TemplateBinding BorderThickness}"
                               Content="{TemplateBinding Content}"
                               ContentTemplate="{TemplateBinding ContentTemplate}"
-                              ContentTransitions="{TemplateBinding ContentTransitions}"
-                              CornerRadius="{TemplateBinding CornerRadius}" />
-                          </ScrollViewer>
+                              ContentTransitions="{TemplateBinding ContentTransitions}"/>
+                            </ScrollViewer>
                         </ControlTemplate>
                       </Setter.Value>
                     </Setter>
@@ -875,8 +865,7 @@
             MinHeight="58"
             Margin="4,0,4,4"
             Background="{TemplateBinding Background}"
-            Control.IsTemplateFocusTarget="True"
-            CornerRadius="{ThemeResource ControlCornerRadius}">
+            Control.IsTemplateFocusTarget="True">
             <Grid.BackgroundTransition>
               <BrushTransition Duration="0:0:0.083" />
             </Grid.BackgroundTransition>

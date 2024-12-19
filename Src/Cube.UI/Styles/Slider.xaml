@@ -323,7 +323,7 @@
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="{ThemeResource SliderPostContentMargin}" />
                                 </Grid.RowDefinitions>
-                                <Border Grid.Row="1" Grid.ColumnSpan="3" CornerRadius="2,2,2,2">
+                                <Border Grid.Row="1" Grid.ColumnSpan="3">
                                     <Rectangle x:Name="HorizontalTrackRect"
                                             Fill="{TemplateBinding Background}"
                                             Height="3"
@@ -332,8 +332,11 @@
                                             RadiusX="1"
                                             RadiusY="1"/>
                                 </Border>
-                                <ToolkitControls:DropShadowPanel Grid.Row="1" OffsetX="0" OffsetY="0" x:Name="TickShadow" Color="{ThemeResource SystemAccentColorLight3}" ShadowOpacity="0.23" BlurRadius="16">
-                                    <Border Grid.Row="1" CornerRadius="2,0,0,2">
+                                <ToolkitControls:DropShadowPanel Grid.Row="1" 
+                                  OffsetX="0" OffsetY="0" x:Name="TickShadow" 
+                                  Color="{ThemeResource SystemAccentColorLight3}" 
+                                 ShadowOpacity="0.23">
+                                    <Border Grid.Row="1">
                                         <Rectangle x:Name="HorizontalDecreaseRect" Grid.Row="1">
                                             <Rectangle.Fill>
                                                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -397,15 +400,11 @@
                                     Fill="{TemplateBinding Background}"
                                     Width="{ThemeResource SliderTrackThemeHeight}"
                                     Grid.Column="1"
-                                    Grid.RowSpan="3"
-                                    RadiusX="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopLeftCornerRadiusDoubleValueConverter}}"
-                                    RadiusY="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BottomRightCornerRadiusDoubleValueConverter}}" />
+                                    Grid.RowSpan="3" />
                                 <Rectangle x:Name="VerticalDecreaseRect"
                                     Fill="{TemplateBinding Foreground}"
                                     Grid.Column="1"
-                                    Grid.Row="2"
-                                    RadiusX="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopLeftCornerRadiusDoubleValueConverter}}"
-                                    RadiusY="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BottomRightCornerRadiusDoubleValueConverter}}"/>
+                                    Grid.Row="2" />
                                 <TickBar x:Name="LeftTickBar"
                                     Visibility="Collapsed"
                                     Fill="{ThemeResource SliderTickBarFill}"

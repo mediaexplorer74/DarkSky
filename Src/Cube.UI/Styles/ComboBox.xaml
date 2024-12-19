@@ -24,7 +24,6 @@
         <Setter Property="UseSystemFocusVisuals" Value="{ThemeResource IsApplicationFocusVisualKindReveal}" />
         <Setter Property="ContextFlyout" Value="{StaticResource TextControlCommandBarContextFlyout}" />
         <Setter Property="SelectionFlyout" Value="{StaticResource TextControlCommandBarSelectionFlyout}" />
-        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
         <Setter Property="BackgroundSizing" Value="InnerBorderEdge" />
         <Setter Property="Template">
             <Setter.Value>
@@ -40,8 +39,7 @@
                                                 BorderBrush="{ThemeResource TextControlButtonBorderBrush}"
                                                 BorderThickness="{TemplateBinding BorderThickness}"
                                                 Background="{ThemeResource TextControlButtonBackground}"
-                                                BackgroundSizing="{TemplateBinding BackgroundSizing}"
-                                                CornerRadius="{TemplateBinding CornerRadius}">
+                                                BackgroundSizing="{TemplateBinding BackgroundSizing}">
                                                 <VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="CommonStates">
                                                         <VisualState x:Name="Normal" />
@@ -222,14 +220,13 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
                             Control.IsTemplateFocusTarget="True"
                             MinWidth="{TemplateBinding MinWidth}"
                             MinHeight="{TemplateBinding MinHeight}" />
                             <ToolkitControls:DropShadowPanel BlurRadius="16.0" MinHeight="{TemplateBinding MinHeight}" ShadowOpacity="0.43" IsMasked="True" Grid.Row="1"
                           OffsetX="0.0" OffsetY="0.0" VerticalAlignment="Bottom" Color="{ThemeResource SystemAccentColorLight3}">
                                 <Grid VerticalAlignment="Bottom" Margin="0, 0, 0, 0" MinWidth="0.1"
-                            Height="2" x:Name="BottomBar" CornerRadius="0, 0, 4, 4">
+                            Height="2" x:Name="BottomBar">
                                     <Grid.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                             <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="0.0" />
@@ -274,7 +271,6 @@
                             Grid.Column="1"
                             Style="{StaticResource DeleteButtonStyle}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
                             Padding="{ThemeResource HelperButtonThemePadding}"
                             IsTabStop="False"
                             Visibility="Collapsed"
@@ -321,7 +317,6 @@
         <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
         <Setter Property="UseSystemFocusVisuals" Value="{ThemeResource IsApplicationFocusVisualKindReveal}" />
         <Setter Property="primitives:ComboBoxHelper.KeepInteriorCornersSquare" Value="true"/>
-        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
@@ -550,7 +545,6 @@
                             Background="{ThemeResource ComboBoxBackgroundFocused}"
                             BorderBrush="{ThemeResource ComboBoxBackgroundBorderBrushFocused}"
                             BorderThickness="{StaticResource ComboBoxBackgroundBorderThicknessFocused}"
-                            CornerRadius="{StaticResource ComboBoxHiglightBorderCornerRadius}"
                             Opacity="0" >
 
                         </Border>
@@ -560,7 +554,9 @@
                             <ToolkitControls:DropShadowPanel.RenderTransform>
                                 <ScaleTransform x:Name="BottomBar" ScaleX="0" ScaleY="1"/>
                             </ToolkitControls:DropShadowPanel.RenderTransform>
-                            <Grid Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" RenderTransformOrigin="0.5, 0.5" Width="{TemplateBinding Width}" Height="2" CornerRadius="0, 0, 4, 4">
+                            <Grid Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" 
+                                  HorizontalAlignment="Left" RenderTransformOrigin="0.5, 0.5" 
+                                  Width="{TemplateBinding Width}" Height="2">
                                 <Grid.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                         <GradientStop Color="{ThemeResource SystemAccentColorLight1}" Offset="0.0" />
@@ -578,7 +574,6 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
                             Control.IsTemplateFocusTarget="True"
                             MinWidth="{ThemeResource ComboBoxThemeMinWidth}" />
                         <Rectangle x:Name="Pill"
@@ -618,15 +613,13 @@
                           Width="200"
                                                  MinWidth="200"
                             AutomationProperties.Name="{TemplateBinding AutomationProperties.Name}"
-                            x:Load="False"
-                            CornerRadius="{TemplateBinding CornerRadius}"/>
+                            x:Load="False"/>
                         <Border x:Name="DropDownOverlay"
                             Grid.Row="1"
                             Grid.Column="1"
                             Background="Transparent"
                             Margin="-4,4,4,4"
                             Visibility="Collapsed"
-                            CornerRadius="{StaticResource ComboBoxDropDownButtonBackgroundCornerRadius}"
                             Width="30"
                             HorizontalAlignment="Right"
                             x:Load="False" />
@@ -658,8 +651,7 @@
                                 BorderThickness="{ThemeResource ComboBoxDropdownBorderThickness}"
                                 Margin="0,-0.5,0,-1"
                                 Padding="{ThemeResource ComboBoxDropdownBorderPadding}"
-                                HorizontalAlignment="Stretch"
-                                CornerRadius="{ThemeResource OverlayCornerRadius}">
+                                HorizontalAlignment="Stretch">
                                 <ScrollViewer x:Name="ScrollViewer"
                                     Foreground="{ThemeResource ComboBoxDropDownForeground}"
                                     MinWidth="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.DropDownContentMinWidth}"
@@ -692,7 +684,6 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="UseSystemFocusVisuals" Value="True" />
         <Setter Property="FocusVisualMargin" Value="-3"/>
-        <Setter Property="CornerRadius" Value="{StaticResource ComboBoxItemCornerRadius}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">
@@ -701,7 +692,6 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Margin="5,2,5,2"
-                        CornerRadius="{TemplateBinding CornerRadius}"
                         Control.IsTemplateFocusTarget="True">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -877,7 +867,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <ToolkitControls:DropShadowPanel CornerRadius="2" Height="24" x:Name="Glow" IsMasked="True" Color="{ThemeResource SystemAccentColorLight3}" ShadowOpacity="0.93" Grid.Row="1" Grid.Column="0">
+                        <ToolkitControls:DropShadowPanel Height="24" x:Name="Glow" IsMasked="True" Color="{ThemeResource SystemAccentColorLight3}" ShadowOpacity="0.93" Grid.Row="1" Grid.Column="0">
                             <Rectangle
                             x:Name="Pill"
                             Style="{StaticResource ComboBoxItemPill}"

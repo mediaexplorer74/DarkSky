@@ -161,10 +161,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="primitives:TabViewListView">
                     <Border
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="{TemplateBinding CornerRadius}">
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
                         <ScrollViewer
                                             x:Name="ScrollViewer"
                                             Grid.Column="1"
@@ -219,7 +218,6 @@
                                                 BorderThickness="1"
                                                 Content="&#xE76B;"
                                                 Delay="50"
-                                                CornerRadius="4"
                                                 FontFamily="Segoe MDL2 Assets"
                                                 HighContrastAdjustment="None"
                                                 Interval="100"
@@ -240,7 +238,6 @@
                                                 Padding="{ThemeResource TabViewItemScrollButtonPadding}"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
-                                                CornerRadius="4"
                                                 AutomationProperties.AccessibilityView="Raw"
                                                 Background="{ThemeResource TabViewScrollButtonBackground}"
                                                 BorderThickness="1"
@@ -296,8 +293,6 @@
                                             BorderBrush="{ThemeResource SystemControlHighlightBaseLowRevealBorderBrush}"
                                             BorderThickness="1"
                                             Control.IsTemplateFocusTarget="True"
-                                            CornerRadius="4"
-                                        
                                             FocusVisualMargin="{TemplateBinding FocusVisualMargin}">
 
                             <Grid.ColumnDefinitions>
@@ -373,8 +368,7 @@
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" >
                                     <VisualState.Setters>
-                                        <Setter Target="Pill.CornerRadius" Value="0"/>
-                                        <Setter Target="TabContainer.Background" Value="Transparent" />
+                                       <Setter Target="TabContainer.Background" Value="Transparent" />
                                     </VisualState.Setters>
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetName="CloseButtonIconBrush" 
@@ -385,7 +379,6 @@
                                 </VisualState>
                                 <VisualState x:Name="PointerOver">
                                     <VisualState.Setters>
-                                        <Setter Target="Pill.CornerRadius" Value="0"/>
                                         <Setter Target="TabContainer.Background" Value="Transparent" />
                                         <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundPointerOver}" />
                                         <Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundPointerOver}" />
@@ -403,7 +396,6 @@
 
                                 <VisualState x:Name="Pressed">
                                     <VisualState.Setters>
-                                        <Setter Target="Pill.CornerRadius" Value="0"/>
                                         <Setter Target="TabContainer.Background" Value="Transparent" />
                                         <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundPressed}" />
                                         <Setter Target="IconControl.Foreground" Value="{ThemeResource TabViewItemIconForegroundPressed}" />
@@ -424,7 +416,6 @@
                                         <Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
                                         <Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonForeground}" />
                                         <Setter Target="LayoutRoot.Background" Value="Transparent" />
-                                        <Setter Target="Pill.CornerRadius" Value="0, 0, 4, 4"/>
                                     </VisualState.Setters>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="PillScale" Storyboard.TargetProperty="ScaleX" EnableDependentAnimation="True" Duration="0:0:0.12" To="1"/>
@@ -440,7 +431,6 @@
                                         <Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
                                         <Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonForeground}" />
                                         <Setter Target="LayoutRoot.Background" Value="Transparent" />
-                                        <Setter Target="Pill.CornerRadius" Value="0, 0, 4, 4"/>
                                     </VisualState.Setters>
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetName="CloseButtonIconBrush" 
@@ -462,7 +452,6 @@
                                         <Setter Target="CloseButton.Background" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonBackground}" />
                                         <Setter Target="CloseButton.Foreground" Value="{ThemeResource TabViewItemHeaderSelectedCloseButtonForeground}" />
                                         <Setter Target="LayoutRoot.Background" Value="Transparent" />
-                                        <Setter Target="Pill.CornerRadius" Value="0"/>
                                     </VisualState.Setters>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="PillScale" Storyboard.TargetProperty="ScaleX" EnableDependentAnimation="True" Duration="0:0:0.12" To="0.756"/>
@@ -651,7 +640,6 @@
         <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
         <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
-        <Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
         <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
         <Setter Property="FocusVisualMargin" Value="-3" />
         <Setter Property="Template">
@@ -669,8 +657,7 @@
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         Content="{TemplateBinding Content}"
                                         ContentTemplate="{TemplateBinding ContentTemplate}"
-                                        ContentTransitions="{TemplateBinding ContentTransitions}"
-                                        CornerRadius="{TemplateBinding CornerRadius}">
+                                        ContentTransitions="{TemplateBinding ContentTransitions}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal">
@@ -710,7 +697,6 @@
     <Style x:Name="TabViewButtonStyle" TargetType="Button">
         <Setter Property="Foreground" Value="{ThemeResource SystemControlBackgroundBaseMediumBrush}" />
         <Setter Property="Background" Value="{ThemeResource SystemControlTransparentBrush}" />
-        <Setter Property="CornerRadius" Value="4" />
         <Setter Property="FontSize" Value="11" />
         <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -730,7 +716,6 @@
                                         Content="{TemplateBinding Content}"
                                         ContentTemplate="{TemplateBinding ContentTemplate}"
                                         ContentTransitions="{TemplateBinding ContentTransitions}"
-                                        CornerRadius="{TemplateBinding CornerRadius}"
                                         FontFamily="{TemplateBinding FontFamily}"
                                         FontSize="{TemplateBinding FontSize}"
                                         FontWeight="SemiLight">

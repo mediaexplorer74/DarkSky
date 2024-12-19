@@ -1,0 +1,94 @@
+﻿<UserControl
+    x:Class="BlueWP.Inlays.NotificationsInlay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlueWP.Inlays"
+    xmlns:bwc="using:BlueWP.Controls"
+    xmlns:bwpcp="using:BlueWP.Controls.Post"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+  <UserControl.Resources>
+    <DataTemplate x:Key="templateLikeRepostFollow">
+      <Grid BorderThickness="0,0,0,1" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Padding="5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="32"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <FontIcon Grid.Column="0" Grid.RowSpan="2" Glyph="{Binding Icon}" VerticalAlignment="Top" HorizontalAlignment="Center" Width="32" Margin="0,5,5,0"/>
+        <ListView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Avatars}">
+          <ListView.ItemContainerStyle>
+            <Style TargetType="ListViewItem">
+              <Setter Property="Margin" Value="0,0,5,0"/>
+              <Setter Property="Padding" Value="0"/>
+              <Setter Property="MinHeight" Value="0"/>
+              <Setter Property="MinWidth" Value="0"/>
+            </Style>
+          </ListView.ItemContainerStyle>
+          <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal"></StackPanel>
+            </ItemsPanelTemplate>
+          </ListView.ItemsPanel>
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <Image Width="20" Height="20" VerticalAlignment="Top">
+                <Image.Source>
+                  <BitmapImage UriSource="{Binding}"/>
+                </Image.Source>
+              </Image>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock TextWrapping="WrapWholeWords" Grid.Column="1" Grid.Row="1">
+          <Run Text="{Binding FirstName}" FontWeight="Bold"/>
+          <Run Text="{Binding AdditionalNames}"/>
+          <Run Text="{Binding Verb}"/>
+          <Run Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}" Text="·"/>
+          <Run Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}" Text="{Binding PostElapsedTime}"/>
+        </TextBlock>
+        <Button Grid.Column="1" Grid.Row="2" Click="LikedPost_Click">
+          <Button.Template>
+            <ControlTemplate>
+              <TextBlock Text="{Binding SubjectPostText}" Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}" TextWrapping="WrapWholeWords"/>
+            </ControlTemplate>
+          </Button.Template>
+        </Button>
+      </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="templateMentionReplyQuote">
+      <bwpcp:Post PostData="{Binding FirstPost}" PointerReleased="Post_PointerReleased"/>
+    </DataTemplate>
+
+    <bwc:NotificationDataTemplateSelector x:Key="selector"
+      Like   ="{StaticResource templateLikeRepostFollow}"
+      Repost ="{StaticResource templateLikeRepostFollow}"
+      Follow ="{StaticResource templateLikeRepostFollow}"
+      Mention="{StaticResource templateMentionReplyQuote}"
+      Reply  ="{StaticResource templateMentionReplyQuote}"
+      Quote  ="{StaticResource templateMentionReplyQuote}" 
+     />
+  </UserControl.Resources>
+  <Grid>
+
+    <ListView ItemsSource="{Binding NotificationGroups}" HorizontalContentAlignment="Stretch" ItemTemplateSelector="{StaticResource selector}">
+      <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+          <Setter Property="Margin" Value="0"/>
+          <Setter Property="Padding" Value="0"/>
+          <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+          <Setter Property="MinHeight" Value="0"/>
+        </Style>
+      </ListView.ItemContainerStyle>
+    </ListView>
+
+  </Grid>
+</UserControl>

@@ -8,7 +8,12 @@
     xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls" 
     xmlns:helpers="using:Cube.UI.Helpers"
     mc:Ignorable="d">
-    <toolkit:DropShadowPanel VerticalAlignment="Center" ShadowOpacity="1" HorizontalAlignment="Stretch" Color="{x:Bind helpers:ColorHelper.GetLighterColor1(Color), Mode=OneWay}">
-        <Grid Background="{x:Bind Color, Mode=OneWay, Converter={StaticResource ColorToBrush}}" VerticalAlignment="Center" HorizontalAlignment="Stretch" CornerRadius="100" Width="{x:Bind Width, Mode=OneWay}" Height="{x:Bind Height, Mode=OneWay}"/>
+    <toolkit:DropShadowPanel VerticalAlignment="Center" 
+                             ShadowOpacity="1" HorizontalAlignment="Stretch"
+                             Color="{x:Bind helpers:ColorHelper.GetLighterColor1(Color), Mode=OneWay}">
+        <Grid Background="{x:Bind Color, Mode=OneWay, Converter={StaticResource ColorToBrush}}" 
+              VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+              Width="{x:Bind Width, Mode=OneWay}"
+              Height="{x:Bind Height, Mode=OneWay}"/>
     </toolkit:DropShadowPanel>
 </UserControl>

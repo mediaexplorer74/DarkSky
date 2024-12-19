@@ -1,39 +1,47 @@
-# DarkSky v1 (Alpha Preview) - retro branch
+# DarkSky - retro branch
 ![](Images/logo.png)
 
-My RnD of DarkSky, modern uwp app for BlueSky social network.  The goal is to simplify this project to run/support some WindowsPhones... ;)
- 
-## About (words of the author)
-"
-DarkSky is a modern (WIP) Fluent Design UWP BlueSky client. The old app from last year is being split into a frontend and backend. This repository contains the frontend app.
+Bluesky client for Windows Phone (on W10M OS)
 
-For DarkSky progress discussions see: https://discord.gg/windows-apps-hub-714581497222398064
+## About / Abstract
+This is BlueWP's fork re-named as DarkSky for Windows Phone (yea, I planned basing on DarkSky project too!)
 
-Or here: https://bsky.app/profile/firecube.bsky.social
+## Screenshot(s)
+![](Images/shot01.png)
+![](Images/shot02.png)
+![](Images/shot03.png)
+![](Images/shot04.png)
 
-Backend API repo: https://github.com/FireCubeStudios/DarkSky.API/
-"
- - FireCubeStudios
-
-## Screenshots
-![Desktop x64](Images/shot01.png)
-![Desktop x64](Images/shot02.png)
-![Desktop x64](Images/shot03.png)
-![Mobile ARM](Images/shot04.png)
-
+## My 2 cents
+- BlueWP project name transformed into more normal DarkSky name , IMHO
+- I started work on "injecting" Cube.UI into "DarkSky retro" (planned as lite version of Darksky for winphones). So,
+for Cube.UI, Min. Win. OS build targeted to 16299 at now. 
+- Still alpha version, no less no more.
 
 ## Tech/dev details
 - Platforms: UWP only
 - Targets: x64; x64; ARM
-- OSes: Windows 10 or Windows 10 Mobile (!)
+- OSes: Windows 10 or Windows 10 Mobile 
 - Win. SDK used: 19041 
-- Min. Win. OS build: 15063 
+- Min. Win. OS build: 15063 (special 16299 "downshifting" used)  
 
-## Status / my 2 cents
-- Micro-research of scr code
-- win sdk 22000 -> 15063 (Hello, W10M!)
-- Draft. Prototype / Pre-Pre-Pre-Alpha version. Still exploring modern-ui & mvvm "magic"...
-- some experiments with Darksky+BlueWP mixing , so BlueWP Core (W10M-compatible ATProto & some W10M UI) used at now :)
+## Building
+Everything should be in `DarkSky.sln`; the solution is pinned to use VS2017 so that you can deploy directly
+to the device, but you should be able to compile and build packages with VS2022 as well.
+
+## Installation
+- Enable Developer mode on your phone (Settings > Update & Security > For developers)
+- Enable Device discovery and Device Portal
+- Connect your phone to your WiFi and open the address provided under "Connect using:"
+- In the browser, follow the instructions to pair your phone to your computer
+- In the device portal's App Manager, select the `.appxbundle` file from the downloaded release
+- If this is your first time installing, add the contents of the Dependencies directory using the "App dependency" button
+- Press Go and wait until it installs; ensure your phone doesn't lock while it's installing.
+
+## Todo
+- Posting: Autocomplete handles
+- Pagination / infinite scrolling
+- Fix Cube.UI-WinSDK 16299 incompatibility
 
 ## References
 - https://github.com/FireCubeStudios/DarkSky/ Original DarkSky project
@@ -41,13 +49,9 @@ Backend API repo: https://github.com/FireCubeStudios/DarkSky.API/
 - https://github.com/Gargaj/ Gargaj aka "Polyurethane audio breeder / semi-organic code regurgitation trooper" :)
 - https://github.com/Gargaj/BlueWP "Bluesky client for Windows Phone"
 
-## Licensing
-MIT License
 
 ## ..
-AS IS. No support. RnD only / DIY
+As is. No support / just for fun. DIY.
 
 ## .
-[m][e] November 2024
-
-
+[m][e] 2024

@@ -180,7 +180,7 @@ namespace Cube.UI.Controls.Toolkit
 
                 // We check for IAlphaMaskProvider first, to ensure that we use the custom
                 // alpha mask even if Content happens to extend any of the other classes
-                if (Content is IAlphaMaskProvider maskedControl)
+                /*if (Content is IAlphaMaskProvider maskedControl)
                 {
                     if (maskedControl.WaitUntilLoaded && maskedControl is FrameworkElement element && !element.IsLoaded)
                     {
@@ -191,7 +191,8 @@ namespace Cube.UI.Controls.Toolkit
                         mask = maskedControl.GetAlphaMask();
                     }
                 }
-                else if (Content is Image)
+                else */
+                if (Content is Image)
                 {
                     mask = ((Image)Content).GetAlphaMask();
                 }
@@ -214,12 +215,12 @@ namespace Cube.UI.Controls.Toolkit
 
         private void CustomMaskedElement_Loaded(object sender, RoutedEventArgs e)
         {
-            if (sender is FrameworkElement element)
+            /*if (sender is FrameworkElement element)
             {
                 element.Loaded -= CustomMaskedElement_Loaded;
 
                 _dropShadow.Mask = ((IAlphaMaskProvider)element).GetAlphaMask();
-            }
+            }*/
         }
 
         private void UpdateShadowOffset(float x, float y, float z)
