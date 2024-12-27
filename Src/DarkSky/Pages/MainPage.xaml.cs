@@ -105,7 +105,8 @@ namespace BlueWP.Pages
         {
           case "timeline":
             {
-              _feeds.Add(new Feed() { Name = feedInfo.value.Substring(0, 1).ToUpper() + feedInfo.value.Substring(1) });
+              _feeds.Add(new Feed() 
+              { Name = feedInfo.value.Substring(0, 1).ToUpper() + feedInfo.value.Substring(1) });
             }
             break;
           case "feed":

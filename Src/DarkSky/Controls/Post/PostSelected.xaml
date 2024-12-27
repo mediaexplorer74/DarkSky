@@ -12,7 +12,8 @@
     d:DesignWidth="400">
 
   <Grid x:Name="LayoutRoot">
-    <Grid HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Padding="5">
+    <Grid HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" 
+          BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Padding="5">
       <Grid.RowDefinitions>
         <RowDefinition Height="40"/>
         <RowDefinition Height="Auto"/>
@@ -29,7 +30,9 @@
         </Grid.RowDefinitions>
         
         <!-- big avatar -->
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Width="32" Height="32" VerticalAlignment="Top" Margin="0,0,5,0">
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+               Width="32" Height="32" 
+               VerticalAlignment="Top" Margin="0,0,5,0">
           <Image.Source>
             <BitmapImage UriSource="{Binding PostAuthorAvatarURL}"/>
           </Image.Source>
@@ -41,23 +44,30 @@
             <Button.Template>
               <ControlTemplate>
                 <StackPanel Orientation="Horizontal">
-                  <TextBlock Text="{Binding PostAuthorDisplayName}" TextWrapping="WrapWholeWords" FontWeight="Bold" Margin="0,0,5,0"/>
+                  <TextBlock Text="{Binding PostAuthorDisplayName}" 
+                             TextWrapping="WrapWholeWords" FontWeight="Bold" Margin="0,0,5,0"/>
                 </StackPanel>
               </ControlTemplate>
             </Button.Template>
           </Button>
-          <TextBlock Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}" Margin="0,0,5,0">·</TextBlock>
-          <TextBlock Text="{Binding PostElapsedTime}" TextWrapping="WrapWholeWords" Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
+          <TextBlock Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}" 
+                     Margin="0,0,5,0">·</TextBlock>
+          <TextBlock Text="{Binding PostElapsedTime}" 
+                     TextWrapping="WrapWholeWords" 
+                     Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
         </StackPanel>
 
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding PostAuthorHandle}" TextWrapping="WrapWholeWords" Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" 
+                   Text="{Binding PostAuthorHandle}" TextWrapping="WrapWholeWords" Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
 
       </Grid>
 
-      <StackPanel Grid.Row="1" Orientation="Vertical" Width="Auto">
+      <StackPanel Grid.Row="1" Orientation="Vertical" 
+                  Width="Auto">
 
         <!-- post contents -->
-        <TextBlock x:Name="postText" TextWrapping="WrapWholeWords" FontSize="20" Margin="0,5,0,0"/>
+        <TextBlock x:Name="postText" TextWrapping="WrapWholeWords" 
+                   FontSize="20" Margin="0,5,0,0"/>
 
         <!-- image block -->
         <local:ImageGallery Images="{Binding PostImages}">
@@ -69,7 +79,10 @@
         </local:ImageGallery>
 
         <!-- video block -->
-        <MediaPlayerElement Loaded="MediaPlayerElement_Loaded" HorizontalAlignment="Stretch" Height="{Binding VideoHeight}" AreTransportControlsEnabled="True">
+        <MediaPlayerElement Loaded="MediaPlayerElement_Loaded" 
+                HorizontalAlignment="Stretch" 
+                            Height="{Binding VideoHeight}" 
+                            AreTransportControlsEnabled="True">
           <i:Interaction.Behaviors>
             <c:DataTriggerBehavior Binding="{Binding HasVideo}" Value="True">
               <c:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
@@ -81,7 +94,8 @@
         </MediaPlayerElement>
 
         <!-- embed link -->
-        <Border BorderThickness="1" CornerRadius="5" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}">
+        <Border BorderThickness="1" CornerRadius="5" 
+                BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}">
           <i:Interaction.Behaviors>
             <c:DataTriggerBehavior Binding="{Binding HasEmbedExternal}" Value="True">
               <c:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
@@ -94,7 +108,9 @@
         </Border>
 
         <!-- quote post -->
-        <Button BorderThickness="1" Click="QuotedPost_Click" Background="Transparent" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Padding="5">
+        <Button BorderThickness="1" Click="QuotedPost_Click" 
+                Background="Transparent" 
+                BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Padding="5">
           <i:Interaction.Behaviors>
             <c:DataTriggerBehavior Binding="{Binding HasQuotedPost}" Value="True">
               <c:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
@@ -106,7 +122,10 @@
           <local:PostQuoted PostData="{Binding QuotedPost}"/>
         </Button>
 
-        <TextBlock Grid.Row="2" Text="{Binding PostDateTime}" TextWrapping="WrapWholeWords" Margin="0,10,0,10" Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
+        <TextBlock Grid.Row="2" Text="{Binding PostDateTime}" 
+                   TextWrapping="WrapWholeWords" 
+                   Margin="0,10,0,10" 
+                   Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
 
         <!-- engagement counters 1: text -->
         <Border BorderThickness="0,1,0,1" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" Padding="5">
@@ -172,14 +191,14 @@
             <FlyoutBase.AttachedFlyout>
               <MenuFlyout>
                 <MenuFlyoutItem Text="Repost" Click="Repost_Click">
-                  <MenuFlyoutItem.Icon>
+                  <!--MenuFlyoutItem.Icon>
                     <FontIcon Glyph="&#xE8EB;" />
-                  </MenuFlyoutItem.Icon>
+                  </MenuFlyoutItem.Icon-->
                 </MenuFlyoutItem>
                 <MenuFlyoutItem Text="Quote post" Click="Quote_Click">
-                  <MenuFlyoutItem.Icon>
+                  <!--MenuFlyoutItem.Icon>
                     <FontIcon Glyph="&#xE9B1;" />
-                  </MenuFlyoutItem.Icon>
+                  </MenuFlyoutItem.Icon-->
                 </MenuFlyoutItem>
               </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
@@ -196,9 +215,12 @@
                         <c:ChangePropertyAction PropertyName="Foreground" Value="#EC4899" />
                         <c:ChangePropertyAction PropertyName="Glyph" Value="&#xEB52;" />
                       </c:DataTriggerBehavior>
-                      <c:DataTriggerBehavior Binding="{Binding PostLiked}" Value="False">
-                        <c:ChangePropertyAction PropertyName="Foreground" Value="{ThemeResource TextBoxDisabledForegroundThemeBrush}" />
-                        <c:ChangePropertyAction PropertyName="Glyph" Value="&#xEB51;" />
+                      <c:DataTriggerBehavior Binding="{Binding PostLiked}" 
+                                             Value="False">
+                        <c:ChangePropertyAction PropertyName="Foreground" 
+                                                Value="{ThemeResource TextBoxDisabledForegroundThemeBrush}" />
+                        <c:ChangePropertyAction PropertyName="Glyph"
+                                                Value="&#xEB51;" />
                       </c:DataTriggerBehavior>
                     </i:Interaction.Behaviors>
                   </FontIcon>
@@ -208,7 +230,8 @@
                           <c:ChangePropertyAction PropertyName="Foreground" Value="#EC4899" />
                         </c:DataTriggerBehavior>
                         <c:DataTriggerBehavior Binding="{Binding PostLiked}" Value="False">
-                          <c:ChangePropertyAction PropertyName="Foreground" Value="{ThemeResource TextBoxDisabledForegroundThemeBrush}" />
+                          <c:ChangePropertyAction PropertyName="Foreground" 
+                              Value="{ThemeResource TextBoxDisabledForegroundThemeBrush}" />
                         </c:DataTriggerBehavior>
                       </i:Interaction.Behaviors>
                   </TextBlock>
@@ -222,16 +245,17 @@
             <Button.Template>
               <ControlTemplate>
                 <StackPanel Orientation="Horizontal">
-                  <FontIcon Glyph="&#xE712;" FontSize="12" Margin="0,0,5,0" Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
+                  <FontIcon Glyph="&#xE712;" FontSize="12" Margin="0,0,5,0" 
+                            Foreground="{ThemeResource TextBoxDisabledForegroundThemeBrush}"/>
                 </StackPanel>
               </ControlTemplate>
             </Button.Template>
             <FlyoutBase.AttachedFlyout>
               <MenuFlyout>
                 <MenuFlyoutItem Text="Copy link to post" Click="MiscCopy_Click">
-                  <MenuFlyoutItem.Icon>
+                  <!--MenuFlyoutItem.Icon>
                     <FontIcon Glyph="&#xE8C8;" />
-                  </MenuFlyoutItem.Icon>
+                  </MenuFlyoutItem.Icon-->
                 </MenuFlyoutItem>
                 <MenuFlyoutItem Text="Delete post" Click="MiscDelete_Click">
                   <i:Interaction.Behaviors>
@@ -242,9 +266,9 @@
                       <c:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
                     </c:DataTriggerBehavior>
                   </i:Interaction.Behaviors>
-                  <MenuFlyoutItem.Icon>
+                  <!--MenuFlyoutItem.Icon>
                     <FontIcon Glyph="&#xE74D;" />
-                  </MenuFlyoutItem.Icon>
+                  </MenuFlyoutItem.Icon-->
                 </MenuFlyoutItem>
               </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
